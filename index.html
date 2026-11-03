@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Демо для клиента: не индексировать -->
+<meta name="robots" content="noindex, nofollow">
+<title>Румянцево Парк — автомойка и детейлинг</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f3f1ec;--white:#fff;--ink:#17191c;--ink2:#3b3f45;--muted:#6f747b;--rule:#dcd8cf;--yel:#f6c624;--yel2:#e3b10c;--dark:#1d2024}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Golos Text",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+/* верхняя строка — как у настоящих моек: адрес, часы, телефон */
+.topline{background:var(--dark);color:#c9ccd1;font-size:13px}
+.topline .wrap{display:flex;justify-content:space-between;gap:16px;height:38px;align-items:center}
+.topline b{color:#fff;font-weight:600}
+.topline .sep{opacity:.35;margin:0 10px}
+header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
+header .wrap{display:flex;align-items:center;gap:36px;height:72px}
+.brand{display:flex;flex-direction:column;line-height:1.05}
+.brand b{font-weight:800;font-size:19px;letter-spacing:.04em;text-transform:uppercase}
+.brand span{font-size:12px;color:var(--muted);letter-spacing:.02em;margin-top:3px}
+nav{display:flex;gap:26px;font-size:15px;color:var(--ink2);margin-left:auto}
+nav a{padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--yel)}
+.hphone{font-weight:700;font-size:17px;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;border-radius:6px;padding:14px 24px;font-weight:600;font-size:15px;transition:background .15s}
+.btn-y{background:var(--yel);color:var(--ink)}.btn-y:hover{background:var(--yel2)}
+.btn-d{background:var(--ink);color:#fff}.btn-d:hover{background:#000}
+.btn-l{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6)}.btn-l:hover{box-shadow:inset 0 0 0 1.5px #fff}
+/* первый экран: фото на всю ширину, текст снизу слева */
+.hero{position:relative;min-height:min(78vh,720px);display:flex;align-items:flex-end;color:#fff;background:#111 url(img/hero.jpg) center 38%/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,13,15,.86) 0%,rgba(12,13,15,.55) 45%,rgba(12,13,15,.05) 80%)}
+.hero .wrap{position:relative;padding-bottom:64px;padding-top:120px;width:100%}
+.hero .kicker{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--yel)}
+.hero h1{font-size:clamp(36px,5.4vw,68px);font-weight:800;line-height:1.02;letter-spacing:-.02em;margin:14px 0 18px;max-width:780px}
+.hero p{font-size:19px;color:#e4e6e9;max-width:540px;margin-bottom:28px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero .open{margin-top:26px;font-size:14px;color:#cfd2d6;display:flex;align-items:center;gap:8px}
+.hero .open i{width:8px;height:8px;border-radius:50%;background:#3fbf6a;display:inline-block}
+section{padding:84px 0;scroll-margin-top:72px}
+h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;letter-spacing:-.015em;line-height:1.08}
+.lead{color:var(--ink2);font-size:17px;max-width:560px;margin-top:12px}
+/* прайс таблицей */
+.price-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+table{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--rule)}
+th,td{text-align:left;padding:18px 20px;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;background:#faf9f6}
+thead th.c{text-align:right}
+td.n b{font-weight:700;font-size:17px;display:block}
+td.n span{font-size:14px;color:var(--muted)}
+td.p{text-align:right;font-weight:700;font-size:17px;white-space:nowrap}
+td.p small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
+td.go{text-align:right;width:1%;white-space:nowrap}
+td.go a{font-size:14px;font-weight:600;border-bottom:2px solid var(--yel);padding-bottom:1px}
+tbody tr:hover td{background:#fcfbf8}
+.pnote{font-size:13px;color:var(--muted);margin-top:14px}
+/* фото работ */
+.works{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:14px;margin-top:34px}
+.works figure{position:relative;overflow:hidden;border-radius:4px;height:440px;background:#222}
+.works img{width:100%;height:100%;object-fit:cover;display:block}
+.works figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;color:#fff;font-weight:600;background:linear-gradient(transparent,rgba(0,0,0,.72))}
+.works figcaption span{display:block;font-weight:400;font-size:13px;color:#d6d8db}
+/* запись */
+#book{background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.book{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;margin-top:34px}
+.book>*{min-width:0}
+.step{padding:22px 0;border-top:1px solid var(--rule)}
+.step:first-child{border-top:0;padding-top:0}
+.step>label{display:flex;gap:12px;align-items:baseline;font-weight:700;font-size:17px;margin-bottom:14px}
+.step>label i{font-style:normal;font-size:13px;color:var(--muted);font-weight:600}
+select,input{width:100%;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:13px 14px;color:var(--ink);font:inherit;font-size:16px;outline:none}
+select:focus,input:focus{border-color:var(--ink)}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.day{border:1px solid var(--rule);border-radius:6px;padding:9px 4px;text-align:center;cursor:pointer;font-size:13px;color:var(--muted);background:var(--white)}
+.day b{display:block;font-size:20px;color:var(--ink);font-weight:700}
+.day.on{background:var(--ink);border-color:var(--ink);color:#c9ccd1}.day.on b{color:#fff}
+.slots{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.slot{border:1px solid var(--rule);border-radius:6px;padding:10px 0;text-align:center;cursor:pointer;font-size:15px;background:var(--white)}
+.slot:hover{border-color:var(--ink)}
+.slot.busy{color:#b9b6ae;background:var(--paper);cursor:not-allowed;border-color:transparent}
+.slot.on{background:var(--yel);border-color:var(--yel);font-weight:700}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sum{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:26px;align-self:start;position:sticky;top:96px}
+.sum h3{font-size:19px;font-weight:700;margin-bottom:10px}
+.row{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dashed var(--rule);font-size:15px}
+.row span{color:var(--muted)}
+.row b{text-align:right;font-weight:600}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin:18px 0 18px}
+.total b{font-size:28px;font-weight:800}
+.err{color:#c0392b;font-size:14px;min-height:20px;margin-top:8px}
+.ok{display:none}
+.ok h3{font-size:22px;font-weight:800;margin-bottom:8px}
+.ok p{color:var(--ink2);font-size:15px;margin-bottom:10px}
+.ok .mark{width:44px;height:44px;border-radius:50%;background:var(--yel);display:grid;place-items:center;font-weight:800;margin-bottom:14px}
+/* контакты */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:stretch}
+.contact dl{margin-top:24px}
+.contact dt{font-size:13px;color:var(--muted);margin-top:18px}
+.contact dd{font-size:19px;font-weight:600}
+.ph{color:#9a6b00}
+.topline .ph,.topline b.ph{color:#f6c624}
+.map{border:1px solid var(--rule);border-radius:4px;min-height:320px;background:#e8e5de;display:grid;place-items:center;color:var(--muted);font-size:14px;text-align:center;padding:20px;
+  background-image:linear-gradient(#dcd8cf 1px,transparent 1px),linear-gradient(90deg,#dcd8cf 1px,transparent 1px);background-size:44px 44px}
+.map b{display:block;color:var(--ink);font-size:16px;margin-bottom:4px}
+footer{background:var(--dark);color:#9fa4ab;font-size:13px;padding:28px 0 70px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer b{color:#fff;letter-spacing:.04em}
+/* метка демо — маленькая, в углу, не перебивает сайт */
+.demo-tag{position:fixed;right:14px;bottom:14px;z-index:40;background:var(--ink);color:#fff;font-size:12px;padding:8px 12px;border-radius:4px;opacity:.9;max-width:280px;line-height:1.35}
+@media (max-width:980px){
+  nav,.hphone{display:none}
+  header .wrap{gap:16px;justify-content:space-between}
+  .book,.contact{grid-template-columns:1fr}
+  .works{grid-template-columns:1fr 1fr}
+  .works figure{height:340px}
+  .works figure:first-child{grid-column:1/-1}
+  .sum{position:static}
+  .topline .hide-m{display:none}
+}
+@media (max-width:640px){
+  .topline .wrap{justify-content:center}
+  .hero{min-height:560px;background-position:62% 30%}
+  .hero:before{background:linear-gradient(0deg,rgba(12,13,15,.9) 0%,rgba(12,13,15,.55) 55%,rgba(12,13,15,.2) 100%)}
+  .hero p{font-size:17px}
+  section{padding:60px 0}
+  thead{display:none}
+  table,tbody,tr,td{display:block;width:100%}
+  tr{border-bottom:1px solid var(--rule);padding:14px 16px}
+  td{border:0;padding:0}
+  td.n{margin-bottom:10px}
+  td.p{display:inline-block;width:33.3%;text-align:left;font-size:15px}
+  td.p small{font-size:11px}
+  td.go{display:block;width:100%;text-align:left;margin-top:10px}
+  .works{grid-template-columns:1fr}
+  .works figure,.works figure:first-child{height:auto;aspect-ratio:4/3;grid-column:auto}
+  .days{grid-template-columns:repeat(7,62px);overflow-x:auto;scrollbar-width:none}
+  .slots{grid-template-columns:repeat(4,1fr)}
+  .two{grid-template-columns:1fr}
+  header .btn{padding:10px 14px;font-size:14px}
+  .demo-tag{left:10px;right:10px;bottom:10px;max-width:none;text-align:center}
+}
+</style>
+</head>
+<body>
+<div class="topline">
+  <div class="wrap">
+    <span><span class="ph">адрес мойки</span><span class="sep hide-m">|</span><span class="hide-m">ежедневно 9:00–21:00</span></span>
+    <span class="hide-m"><b class="ph">+7 (000) 000-00-00</b></span>
+  </div>
+</div>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><b>Румянцево Парк</b><span>автомойка · детейлинг</span></a>
+    <nav>
+      <a href="#price">Цены</a>
+      <a href="#works">Работы</a>
+      <a href="#book">Запись</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="hphone ph" href="#contacts">+7 (000) 000-00-00</a>
+    <a class="btn btn-y" href="#book">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div class="kicker">Автомойка и детейлинг в Румянцево</div>
+    <h1>Помоем, почистим салон, отполируем</h1>
+    <p>Выберите услугу и свободное время на сайте — приезжайте к назначенному часу, без очереди. Накануне напомним о записи в Telegram.</p>
+    <div class="cta">
+      <a class="btn btn-y" href="#book">Записаться онлайн</a>
+      <a class="btn btn-l" href="#price">Цены</a>
+    </div>
+    <div class="open"><i></i><span id="nearest">ближайшее свободное время — завтра</span></div>
+  </div>
+</section>
+
+<section id="price">
+  <div class="wrap">
+    <div class="price-head">
+      <div>
+        <h2>Цены</h2>
+        <p class="lead">Цена зависит от размера машины. Точную стоимость детейлинга мастер скажет после осмотра.</p>
+      </div>
+    </div>
+    <table>
+      <thead><tr><th>Услуга</th><th class="c">Седан</th><th class="c">Кроссовер</th><th class="c">Внедорожник</th><th></th></tr></thead>
+      <tbody id="ptable"></tbody>
+    </table>
+    <div class="pnote">Цены для примера — на вашем сайте будет ваш прайс.</div>
+
+    <div class="works" id="works">
+      <figure><img src="img/tire.jpg" alt="Мойка дисков щёткой"><figcaption>Шины и диски<span>очистка дисков, чернение резины</span></figcaption></figure>
+      <figure><img src="img/interior.jpg" alt="Салон после химчистки"><figcaption>Химчистка салона<span>кожа, ткань, потолок</span></figcaption></figure>
+      <figure><img src="img/polish.jpg" alt="Полировка капота"><figcaption>Полировка<span>блеск без мелких царапин</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap">
+    <h2>Запись онлайн</h2>
+    <p class="lead">Свободное время видно сразу. Запись занимает меньше минуты.</p>
+    <div class="book">
+      <div id="form">
+        <div class="step"><label><i>01</i>Услуга</label>
+          <div class="two"><select id="svc"></select><select id="cls"></select></div></div>
+        <div class="step"><label><i>02</i>День</label><div class="days" id="days"></div></div>
+        <div class="step"><label><i>03</i>Время</label><div class="slots" id="slots"></div></div>
+        <div class="step"><label><i>04</i>Контакты</label>
+          <div class="two">
+            <input id="nm" placeholder="Имя" autocomplete="name">
+            <input id="tel" placeholder="+7 (___) ___-__-__" inputmode="tel" autocomplete="tel">
+          </div>
+          <input id="car" placeholder="Марка и номер машины" style="margin-top:10px">
+        </div>
+      </div>
+      <div class="sum">
+        <div id="sumBox">
+          <h3>Ваша запись</h3>
+          <div class="row"><span>Услуга</span><b id="sSvc">—</b></div>
+          <div class="row"><span>Машина</span><b id="sCls">—</b></div>
+          <div class="row"><span>Когда</span><b id="sWhen">—</b></div>
+          <div class="row"><span>Займёт</span><b id="sDur">—</b></div>
+          <div class="total"><span>Стоимость</span><b id="sSum">—</b></div>
+          <button class="btn btn-d" style="width:100%" id="go">Записаться</button>
+          <div class="err" id="err"></div>
+        </div>
+        <div class="ok" id="ok">
+          <div class="mark">✓</div>
+          <h3>Вы записаны</h3>
+          <p id="okText"></p>
+          <p>Накануне пришлём напоминание. Если планы поменяются — перенести можно прямо из сообщения.</p>
+          <a class="btn btn-y" style="width:100%;margin-top:6px" href="#" id="tgBtn">Получать напоминания в Telegram</a>
+          <button class="btn" style="width:100%;margin-top:8px;background:transparent;box-shadow:inset 0 0 0 1px var(--rule)" id="again">Новая запись</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="wrap contact">
+    <div>
+      <h2>Как нас найти</h2>
+      <dl>
+        <dt>Адрес</dt><dd class="ph">адрес мойки</dd>
+        <dt>Телефон</dt><dd class="ph">+7 (000) 000-00-00</dd>
+        <dt>Режим работы</dt><dd>ежедневно, 9:00–21:00</dd>
+        <dt>Telegram</dt><dd class="ph">@ваш_бот</dd>
+      </dl>
+      <a class="btn btn-y" href="#book" style="margin-top:28px">Записаться онлайн</a>
+    </div>
+    <div class="map"><div><b>Карта Яндекса</b>здесь будет ваша точка и маршрут</div></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><b>РУМЯНЦЕВО ПАРК</b> · автомойка и детейлинг</span>
+    <span>Сайт сделан в <a href="https://wavefinch.ru" style="color:#fff">Wavefinch</a></span>
+  </div>
+</footer>
+
+<div class="demo-tag">Демо-версия · адрес, телефон и цены примерные</div>
+
+<script>
+// Прайс демо: цены по классам [седан, кроссовер, внедорожник], длительность в минутах.
+const CLS=['Седан / хэтчбек','Кроссовер','Внедорожник / минивэн'];
+const SVC=[
+  {n:'Экспресс-мойка',s:'кузов пеной, сушка, коврики',d:30,p:[800,1000,1200]},
+  {n:'Комплексная мойка',s:'кузов в две фазы, пылесос, пластик и стёкла внутри',d:60,p:[1800,2200,2600]},
+  {n:'Мойка + шины и диски',s:'комплексная мойка, очистка дисков, чернение резины',d:75,p:[2400,2800,3300]},
+  {n:'Химчистка салона',s:'сиденья, потолок, ковролин, багажник, озонирование',d:240,p:[9000,11000,13500],from:1},
+  {n:'Полировка кузова',s:'удаление мелких царапин, восстановление блеска, воск',d:300,p:[12000,15000,18000],from:1},
+  {n:'Керамическое покрытие',s:'подготовка, полировка, керамика — защита до года',d:480,p:[25000,30000,36000],from:1}
+];
+let sel={svc:1,cls:0,day:0,slot:null};
+const $=id=>document.getElementById(id);
+const rub=v=>v.toLocaleString('ru-RU')+' ₽';
+const dur=m=>m<60?m+' мин':(m%60?Math.floor(m/60)+' ч '+(m%60)+' мин':(m/60)+' ч');
+
+const SHORT=['седан','кроссовер','внедорожник'];
+$('ptable').innerHTML=SVC.map((s,i)=>`<tr><td class="n"><b>${s.n}</b><span>${s.s}</span></td>
+  ${s.p.map((v,j)=>`<td class="p">${s.from?'от ':''}${rub(v)}<small class="mob">${SHORT[j]}</small></td>`).join('')}
+  <td class="go"><a href="#book" data-i="${i}">Записаться</a></td></tr>`).join('');
+// подписи классов в строках нужны только на телефоне (там нет шапки таблицы)
+const mq=matchMedia('(max-width:640px)');
+const mobLabels=()=>document.querySelectorAll('small.mob').forEach(x=>x.style.display=mq.matches?'block':'none');
+mobLabels();mq.addEventListener('change',mobLabels);
+document.querySelectorAll('td.go a').forEach(a=>a.onclick=()=>{sel.svc=+a.dataset.i;$('svc').value=sel.svc;upd();});
+
+$('svc').innerHTML=SVC.map((s,i)=>`<option value="${i}">${s.n}</option>`).join('');
+$('cls').innerHTML=CLS.map((c,i)=>`<option value="${i}">${c}</option>`).join('');
+$('svc').value=sel.svc;
+$('svc').onchange=e=>{sel.svc=+e.target.value;upd();};
+$('cls').onchange=e=>{sel.cls=+e.target.value;upd();};
+
+const WD=['вс','пн','вт','ср','чт','пт','сб'],MON=['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
+const days=[...Array(7)].map((_,i)=>{const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()+i);return d;});
+const dayName=i=>i===0?'сегодня':i===1?'завтра':WD[days[i].getDay()];
+function drawDays(){
+  $('days').innerHTML=days.map((d,i)=>`<div class="day ${i===sel.day?'on':''}" data-i="${i}">${dayName(i)}<b>${d.getDate()}</b>${MON[d.getMonth()]}</div>`).join('');
+  document.querySelectorAll('.day').forEach(x=>x.onclick=()=>{sel.day=+x.dataset.i;sel.slot=null;drawDays();drawSlots();upd();});
+}
+// «Занятость» — детерминированная по дню и часу, чтобы картинка не прыгала.
+function busy(di,h){return ((di*7+h*3)%5===0)||((di+h)%7===0);}
+function past(di,h){return di===0&&h<=new Date().getHours();}
+function drawSlots(){
+  const hs=[];
+  for(let h=9;h<=20;h++)hs.push(`<div class="slot ${past(sel.day,h)||busy(sel.day,h)?'busy':''} ${sel.slot===h?'on':''}" data-h="${h}">${h}:00</div>`);
+  $('slots').innerHTML=hs.join('');
+  document.querySelectorAll('.slot:not(.busy)').forEach(x=>x.onclick=()=>{sel.slot=+x.dataset.h;drawSlots();upd();});
+}
+function whenText(){const d=days[sel.day];return `${dayName(sel.day)}, ${d.getDate()} ${MON[d.getMonth()]}${sel.slot!=null?' в '+sel.slot+':00':''}`;}
+function upd(){
+  const s=SVC[sel.svc];
+  $('sSvc').textContent=s.n;$('sCls').textContent=CLS[sel.cls];$('sDur').textContent='≈ '+dur(s.d);
+  $('sWhen').textContent=sel.slot==null?'выберите время':whenText();
+  $('sSum').textContent=(s.from?'от ':'')+rub(s.p[sel.cls]);$('err').textContent='';
+}
+function firstFree(){for(let di=0;di<7;di++)for(let h=9;h<=20;h++)if(!past(di,h)&&!busy(di,h))return [di,h];return [1,9];}
+$('tel').addEventListener('input',e=>{
+  let v=e.target.value.replace(/\D/g,'');if(v.startsWith('8'))v='7'+v.slice(1);if(!v.startsWith('7'))v='7'+v;v=v.slice(0,11);
+  const p=[v.slice(1,4),v.slice(4,7),v.slice(7,9),v.slice(9,11)];
+  e.target.value='+7'+(p[0]?' ('+p[0]:'')+(p[0].length===3?')':'')+(p[1]?' '+p[1]:'')+(p[2]?'-'+p[2]:'')+(p[3]?'-'+p[3]:'');
+});
+$('go').onclick=()=>{
+  const nm=$('nm').value.trim(),tel=$('tel').value.replace(/\D/g,'');
+  if(sel.slot==null)return $('err').textContent='Выберите время';
+  if(!nm)return $('err').textContent='Как к вам обращаться?';
+  if(tel.length<11)return $('err').textContent='Проверьте номер телефона';
+  const s=SVC[sel.svc];
+  $('sumBox').style.display='none';$('ok').style.display='block';
+  $('okText').textContent=`${nm}, ждём вас ${whenText()}. ${s.n}, ${(s.from?'от ':'')+rub(s.p[sel.cls])}.`;
+};
+// В демо бота ещё нет — на настоящем сайте кнопка ведёт в бота записи.
+$('tgBtn').onclick=e=>{e.preventDefault();e.target.textContent='Здесь откроется ваш бот в Telegram';};
+$('again').onclick=()=>{$('ok').style.display='none';$('sumBox').style.display='block';sel.slot=null;drawSlots();upd();};
+
+// Сразу открываем ближайший день, где ещё есть свободное время: вечером «сегодня» уже всё прошло.
+const [fd,fh]=firstFree();sel.day=fd;
+$('nearest').textContent=`ближайшее свободное время — ${dayName(fd)} в ${fh}:00`;
+drawDays();drawSlots();upd();
+</script>
+</body>
+</html>
