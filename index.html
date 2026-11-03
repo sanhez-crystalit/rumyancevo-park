@@ -7,309 +7,359 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Румянцево Парк — автомойка и детейлинг</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@800&family=Onest:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#f3f1ec;--white:#fff;--ink:#17191c;--ink2:#3b3f45;--muted:#6f747b;--rule:#dcd8cf;--yel:#f6c624;--yel2:#e3b10c;--dark:#1d2024}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"Golos Text",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-/* верхняя строка — как у настоящих моек: адрес, часы, телефон */
-.topline{background:var(--dark);color:#c9ccd1;font-size:13px}
-.topline .wrap{display:flex;justify-content:space-between;gap:16px;height:38px;align-items:center}
-.topline b{color:#fff;font-weight:600}
-.topline .sep{opacity:.35;margin:0 10px}
-header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
-header .wrap{display:flex;align-items:center;gap:36px;height:72px}
-.brand{display:flex;flex-direction:column;line-height:1.05}
-.brand b{font-weight:800;font-size:19px;letter-spacing:.04em;text-transform:uppercase}
-.brand span{font-size:12px;color:var(--muted);letter-spacing:.02em;margin-top:3px}
-nav{display:flex;gap:26px;font-size:15px;color:var(--ink2);margin-left:auto}
-nav a{padding:6px 0;border-bottom:2px solid transparent}
-nav a:hover{border-color:var(--yel)}
-.hphone{font-weight:700;font-size:17px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;border-radius:6px;padding:14px 24px;font-weight:600;font-size:15px;transition:background .15s}
-.btn-y{background:var(--yel);color:var(--ink)}.btn-y:hover{background:var(--yel2)}
-.btn-d{background:var(--ink);color:#fff}.btn-d:hover{background:#000}
-.btn-l{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6)}.btn-l:hover{box-shadow:inset 0 0 0 1.5px #fff}
-/* первый экран: фото на всю ширину, текст снизу слева */
-.hero{position:relative;min-height:min(78vh,720px);display:flex;align-items:flex-end;color:#fff;background:#111 url(img/hero.jpg) center 38%/cover no-repeat}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,13,15,.86) 0%,rgba(12,13,15,.55) 45%,rgba(12,13,15,.05) 80%)}
-.hero .wrap{position:relative;padding-bottom:64px;padding-top:120px;width:100%}
-.hero .kicker{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--yel)}
-.hero h1{font-size:clamp(36px,5.4vw,68px);font-weight:800;line-height:1.02;letter-spacing:-.02em;margin:14px 0 18px;max-width:780px}
-.hero p{font-size:19px;color:#e4e6e9;max-width:540px;margin-bottom:28px}
-.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
-.hero .open{margin-top:26px;font-size:14px;color:#cfd2d6;display:flex;align-items:center;gap:8px}
-.hero .open i{width:8px;height:8px;border-radius:50%;background:#3fbf6a;display:inline-block}
-section{padding:84px 0;scroll-margin-top:72px}
-h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;letter-spacing:-.015em;line-height:1.08}
-.lead{color:var(--ink2);font-size:17px;max-width:560px;margin-top:12px}
-/* прайс таблицей */
-.price-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
-table{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--rule)}
-th,td{text-align:left;padding:18px 20px;border-bottom:1px solid var(--rule);vertical-align:top}
-thead th{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;background:#faf9f6}
-thead th.c{text-align:right}
-td.n b{font-weight:700;font-size:17px;display:block}
-td.n span{font-size:14px;color:var(--muted)}
-td.p{text-align:right;font-weight:700;font-size:17px;white-space:nowrap}
-td.p small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
-td.go{text-align:right;width:1%;white-space:nowrap}
-td.go a{font-size:14px;font-weight:600;border-bottom:2px solid var(--yel);padding-bottom:1px}
-tbody tr:hover td{background:#fcfbf8}
-.pnote{font-size:13px;color:var(--muted);margin-top:14px}
-/* фото работ */
-.works{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:14px;margin-top:34px}
-.works figure{position:relative;overflow:hidden;border-radius:4px;height:440px;background:#222}
-.works img{width:100%;height:100%;object-fit:cover;display:block}
-.works figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;color:#fff;font-weight:600;background:linear-gradient(transparent,rgba(0,0,0,.72))}
-.works figcaption span{display:block;font-weight:400;font-size:13px;color:#d6d8db}
-/* запись */
-#book{background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.book{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;margin-top:34px}
-.book>*{min-width:0}
-.step{padding:22px 0;border-top:1px solid var(--rule)}
-.step:first-child{border-top:0;padding-top:0}
-.step>label{display:flex;gap:12px;align-items:baseline;font-weight:700;font-size:17px;margin-bottom:14px}
-.step>label i{font-style:normal;font-size:13px;color:var(--muted);font-weight:600}
-select,input{width:100%;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:13px 14px;color:var(--ink);font:inherit;font-size:16px;outline:none}
-select:focus,input:focus{border-color:var(--ink)}
-.days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
-.day{border:1px solid var(--rule);border-radius:6px;padding:9px 4px;text-align:center;cursor:pointer;font-size:13px;color:var(--muted);background:var(--white)}
-.day b{display:block;font-size:20px;color:var(--ink);font-weight:700}
-.day.on{background:var(--ink);border-color:var(--ink);color:#c9ccd1}.day.on b{color:#fff}
-.slots{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
-.slot{border:1px solid var(--rule);border-radius:6px;padding:10px 0;text-align:center;cursor:pointer;font-size:15px;background:var(--white)}
-.slot:hover{border-color:var(--ink)}
-.slot.busy{color:#b9b6ae;background:var(--paper);cursor:not-allowed;border-color:transparent}
-.slot.on{background:var(--yel);border-color:var(--yel);font-weight:700}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.sum{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:26px;align-self:start;position:sticky;top:96px}
-.sum h3{font-size:19px;font-weight:700;margin-bottom:10px}
-.row{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dashed var(--rule);font-size:15px}
-.row span{color:var(--muted)}
-.row b{text-align:right;font-weight:600}
-.total{display:flex;justify-content:space-between;align-items:baseline;margin:18px 0 18px}
-.total b{font-size:28px;font-weight:800}
-.err{color:#c0392b;font-size:14px;min-height:20px;margin-top:8px}
-.ok{display:none}
-.ok h3{font-size:22px;font-weight:800;margin-bottom:8px}
-.ok p{color:var(--ink2);font-size:15px;margin-bottom:10px}
-.ok .mark{width:44px;height:44px;border-radius:50%;background:var(--yel);display:grid;place-items:center;font-weight:800;margin-bottom:14px}
-/* контакты */
-.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:stretch}
-.contact dl{margin-top:24px}
-.contact dt{font-size:13px;color:var(--muted);margin-top:18px}
-.contact dd{font-size:19px;font-weight:600}
-.ph{color:#9a6b00}
-.topline .ph,.topline b.ph{color:#f6c624}
-.map{border:1px solid var(--rule);border-radius:4px;min-height:320px;background:#e8e5de;display:grid;place-items:center;color:var(--muted);font-size:14px;text-align:center;padding:20px;
-  background-image:linear-gradient(#dcd8cf 1px,transparent 1px),linear-gradient(90deg,#dcd8cf 1px,transparent 1px);background-size:44px 44px}
-.map b{display:block;color:var(--ink);font-size:16px;margin-bottom:4px}
-footer{background:var(--dark);color:#9fa4ab;font-size:13px;padding:28px 0 70px}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-footer b{color:#fff;letter-spacing:.04em}
-/* метка демо — маленькая, в углу, не перебивает сайт */
-.demo-tag{position:fixed;right:14px;bottom:14px;z-index:40;background:var(--ink);color:#fff;font-size:12px;padding:8px 12px;border-radius:4px;opacity:.9;max-width:280px;line-height:1.35}
-@media (max-width:980px){
-  nav,.hphone{display:none}
-  header .wrap{gap:16px;justify-content:space-between}
-  .book,.contact{grid-template-columns:1fr}
-  .works{grid-template-columns:1fr 1fr}
-  .works figure{height:340px}
-  .works figure:first-child{grid-column:1/-1}
-  .sum{position:static}
-  .topline .hide-m{display:none}
+/* Направление: «доска плиток» — вся страница как табло мойки на день.
+   Тёмный графит, плитки на шаг светлее, один приглушённый зелёный акцент, светлая «бетонная» секция контактов. */
+:root{
+  --bg:#1c1c1c;--surface:#262626;--surface2:#303030;--ink:#f1f1ef;--muted:#a3a49f;
+  --accent:#8fa68e;--accent-ink:#1c1c1c;--accent2:#7d947c;
+  --field:#c8c5ba;--field-ink:#1c1c1c;--field2:#b9b6aa;--field-muted:#383835;--accent-muted:#2c3a2c;--hover:#3a3a3a;--deep:#141414;--err:#7a1f12;
+  --gap:8px;--pad:24px;
+  --step-small:14px;--step-body:clamp(17px,1rem + .2vw,19px);--step-lead:clamp(20px,1.1rem + .6vw,26px);
+  --step-head:clamp(30px,1.2rem + 2.6vw,56px);--step-display:clamp(40px,5.1vw,92px);
+  --ease:cubic-bezier(.2,.7,.2,1);
 }
-@media (max-width:640px){
-  .topline .wrap{justify-content:center}
-  .hero{min-height:560px;background-position:62% 30%}
-  .hero:before{background:linear-gradient(0deg,rgba(12,13,15,.9) 0%,rgba(12,13,15,.55) 55%,rgba(12,13,15,.2) 100%)}
-  .hero p{font-size:17px}
-  section{padding:60px 0}
-  thead{display:none}
-  table,tbody,tr,td{display:block;width:100%}
-  tr{border-bottom:1px solid var(--rule);padding:14px 16px}
-  td{border:0;padding:0}
-  td.n{margin-bottom:10px}
-  td.p{display:inline-block;width:33.3%;text-align:left;font-size:15px}
-  td.p small{font-size:11px}
-  td.go{display:block;width:100%;text-align:left;margin-top:10px}
-  .works{grid-template-columns:1fr}
-  .works figure,.works figure:first-child{height:auto;aspect-ratio:4/3;grid-column:auto}
-  .days{grid-template-columns:repeat(7,62px);overflow-x:auto;scrollbar-width:none}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{font-family:"Onest",system-ui,sans-serif;font-size:var(--step-body);line-height:1.5;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+img{display:block;width:100%;height:100%;object-fit:cover}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.disp{font-family:"Unbounded",sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1;text-transform:uppercase}
+h2{font-family:"Unbounded",sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1.02;font-size:var(--step-head);text-transform:uppercase}
+.board{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);padding:0 var(--gap)}
+.tile{background:var(--surface);padding:var(--pad);position:relative;overflow:hidden;min-width:0}
+.tile.ph{padding:0;background:#111}
+.lead{font-size:var(--step-lead);line-height:1.3}
+.small{font-size:var(--step-small);color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 24px;font-weight:500;background:var(--accent);color:var(--accent-ink);transition:transform .15s var(--ease),background .15s}
+.btn:hover{background:var(--accent2)}.btn:active{transform:scale(.97)}
+.btn.ink{background:var(--bg);color:var(--ink)}.btn.ink:hover{background:#000}
+
+/* ── верхний ряд: плитки знака, меню и действия ── */
+.top{position:sticky;top:0;z-index:30;padding-top:var(--gap);background:var(--bg)}
+.top .tile{height:60px;padding:0 20px;display:flex;align-items:center}
+.mark{grid-column:span 1;background:var(--ink);color:var(--bg);justify-content:center;font-family:"Unbounded";font-weight:800;font-size:18px;letter-spacing:-.04em}
+.nav{grid-column:span 8;gap:28px}
+.nav a{transition:color .15s}.nav a:hover{color:var(--accent)}
+.nav .tel{margin-left:auto;font-weight:500}
+.act{grid-column:span 3;background:var(--accent);color:var(--accent-ink);justify-content:space-between;font-weight:500;transition:background .15s}
+.act:hover{background:var(--accent2)}
+.act svg{transition:transform .2s var(--ease)}.act:hover svg{transform:translateX(4px)}
+
+/* ── первый экран: доска два на два ── */
+.hero{margin-top:var(--gap);height:calc(100svh - 76px - var(--gap));min-height:620px;grid-template-rows:1fr 1fr}
+.name{grid-column:1/7;display:flex;flex-direction:column;justify-content:flex-end;gap:16px;background:var(--surface)}
+.name h1{font-size:var(--step-display)}
+.name h1 span{display:block}
+.p1{grid-column:7/13}
+.p2{grid-column:1/7}
+.p1 img,.p2 img{filter:grayscale(1) contrast(1.05)}
+.p1 img{object-position:center 40%}
+.duo{grid-column:7/13;display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);padding:0;background:none}
+.duo .tile{display:flex;flex-direction:column;justify-content:space-between}
+.say{background:var(--deep)}
+.now{background:var(--accent);color:var(--accent-ink)}
+.now .lead{font-weight:500}
+.free{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.free button{background:var(--accent-ink);color:var(--ink);padding:0 14px;min-height:44px;font-size:var(--step-small);font-weight:500;transition:transform .15s var(--ease),background .15s}
+.free button:hover{background:#000;transform:translateY(-2px)}
+
+/* ── цены: крупная таблица, колонка выбранного класса — на акценте ── */
+.sec{margin-top:var(--gap);scroll-margin-top:76px}
+.head{grid-column:1/-1;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;padding:96px var(--pad) var(--pad)}
+.head p{max-width:520px}
+.pt{grid-column:1/-1;padding:0;background:var(--surface)}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:20px var(--pad);vertical-align:top}
+thead th{padding-top:28px;padding-bottom:20px}
+thead th button{text-align:left;font-size:var(--step-lead);font-weight:500;display:block;width:100%}
+thead th small{display:block;font-size:var(--step-small);color:var(--muted);font-weight:400}
+tbody tr:nth-child(odd) td{background:var(--surface2)}
+td.n b{display:block;font-weight:500;font-size:var(--step-lead);line-height:1.25}
+td.n span{font-size:var(--step-small);color:var(--muted)}
+td.c,th.c{width:19%}
+td.c button{font-size:var(--step-lead);text-align:left;white-space:nowrap;transition:transform .15s var(--ease)}
+td.c button:hover{transform:translateX(3px)}
+td.c button i{display:block;font-style:normal;font-size:var(--step-small);color:var(--muted);margin-top:2px}
+.on-cls{background:var(--accent)!important;color:var(--accent-ink)}
+.on-cls small,.on-cls i,.on-cls span{color:var(--accent-muted)!important}
+.pick{display:none;gap:6px;padding:var(--gap)}
+.pick button{flex:1;padding:0 8px;min-height:48px;background:var(--surface2);font-size:var(--step-small);font-weight:500}
+.pick button.on{background:var(--accent);color:var(--accent-ink)}
+
+/* ── работы ── */
+.w1{grid-column:1/7;height:560px}
+.w2{grid-column:7/10;height:560px}
+.w3{grid-column:10/13;height:560px}
+.cap{position:absolute;left:0;bottom:0;padding:16px 20px;background:var(--bg);font-size:var(--step-small);color:var(--ink)}
+.cap b{font-weight:500;color:var(--ink);margin-right:6px}
+.cap span{color:var(--muted)}
+
+/* ── запись ── */
+.form{grid-column:1/9}
+.sum{grid-column:9/13;background:var(--field);color:var(--field-ink);display:flex;flex-direction:column}
+.step+.step{margin-top:36px}
+.step>label,.step>.lab{display:block;font-weight:500;margin-bottom:12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+select,input{width:100%;background:var(--surface2);border:0;padding:16px;color:var(--ink);font:inherit;font-size:16px;border-radius:0;appearance:none;-webkit-appearance:none;transition:background .15s}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' fill='none' stroke='%23f1f1ef' stroke-width='2'%3E%3Cpath d='M1 1l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:44px}
+select:focus,input:focus{background-color:var(--hover);outline:none}
+input::placeholder{color:var(--muted)}
+.fld{display:block}.fld span{display:block;font-size:var(--step-small);color:var(--muted);margin-bottom:6px}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.day{background:var(--surface2);padding:12px 4px;text-align:center;font-size:var(--step-small);color:var(--muted);transition:transform .15s var(--ease),background .15s}
+.day:hover{background:var(--hover)}.day:active{transform:scale(.96)}
+.day b{display:block;font-size:var(--step-lead);color:var(--ink);font-weight:500;line-height:1.2}
+.day.on{background:var(--ink);color:#555}.day.on b{color:var(--bg)}
+.slots{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.slot{background:var(--surface2);padding:12px 0;text-align:center;font-weight:500;transition:transform .15s var(--ease),background .15s}
+.slot:hover{background:var(--hover)}.slot:active{transform:scale(.96)}
+.slot.busy{background:transparent;color:var(--muted);text-decoration:line-through;cursor:not-allowed;font-weight:400}
+.slot.on{background:var(--accent);color:var(--accent-ink)}
+.sum h3{font-family:"Unbounded";font-weight:800;text-transform:uppercase;letter-spacing:-.03em;font-size:var(--step-lead);margin-bottom:20px}
+.row{display:flex;justify-content:space-between;gap:14px;padding:10px 0;font-size:var(--step-small)}
+.row:nth-child(even){background:var(--field2);margin:0 -12px;padding:10px 12px}
+.row span{color:var(--field-muted)}.row b{text-align:right;font-weight:500}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin:auto 0 18px;padding-top:28px}
+.total b{font-family:"Unbounded";font-weight:800;font-size:var(--step-lead);letter-spacing:-.03em;line-height:1}
+.sum .btn{width:100%}
+.err{color:var(--err);font-size:var(--step-small);min-height:22px;margin-top:8px;font-weight:500}
+#ok{display:none;flex-direction:column;height:100%}
+#ok p{margin-bottom:12px}
+#ok .btn+.btn{margin-top:8px}
+
+/* ── контакты: светлая «бетонная» секция с лентой фото ── */
+.contact{margin-top:var(--gap);background:var(--field);color:var(--field-ink);padding:48px 0 var(--gap);scroll-margin-top:76px;overflow:hidden}
+.strip{display:flex;gap:var(--gap);overflow-x:auto;padding:0 var(--gap);scrollbar-width:none;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.strip::-webkit-scrollbar{display:none}
+.strip img{scroll-snap-align:start}
+.strip img{height:150px;width:auto;flex:none}
+.strip img:nth-child(3n+1){aspect-ratio:3/4}.strip img:nth-child(3n+2){aspect-ratio:1}.strip img:nth-child(3n){aspect-ratio:3/2}
+.chead{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:24px;margin:72px 0 40px;padding:0 calc(var(--gap) + var(--pad))}
+.chead p{max-width:520px}
+.cells .tile{background:var(--field2);color:var(--field-ink);min-height:150px;display:flex;flex-direction:column;justify-content:space-between}
+.cells .tile .small{color:var(--field-muted)}
+.cells .c3{grid-column:span 4}
+.cells .tile .lead{font-weight:500}
+.cells .map{grid-column:1/9;min-height:260px;background:var(--field-ink);color:var(--field)}
+.cells .map .small{color:#a8a59a}
+.cells .mapph{grid-column:9/13;min-height:260px}
+
+/* ── подвал из плиток ── */
+.foot{margin-top:var(--gap);padding-bottom:var(--gap)}
+.foot .tile{min-height:200px;display:flex;flex-direction:column;justify-content:space-between}
+.f2{justify-content:flex-start!important;padding-top:12px;padding-bottom:12px}
+.f1{grid-column:1/5}.f2{grid-column:5/8}.f3{grid-column:8/13}
+.f2 a{display:block;padding:10px 0;min-height:44px;transition:color .15s}.f2 a:hover{color:var(--accent)}
+.word{grid-column:1/9;min-height:300px!important;background:var(--ink)!important;color:var(--bg);justify-content:center!important;align-items:center}
+.word span{font-size:clamp(30px,4.6vw,76px)}
+.go{grid-column:9/13;min-height:300px!important;background:var(--accent)!important;color:var(--accent-ink);transition:background .15s}
+.go:hover{background:var(--accent2)!important}
+.go svg{align-self:flex-end;transition:transform .25s var(--ease)}.go:hover svg{transform:translate(6px,-6px)}
+
+.demo-tag{background:var(--ink);color:var(--bg);font-size:var(--step-small);padding:8px var(--pad);text-align:center}
+
+/* ── движение: шторка на главном фото, появление частей секций ── */
+@keyframes shutter{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
+@keyframes settle{from{transform:scale(1.12)}to{transform:scale(1)}}
+.p1{animation:shutter 1.1s var(--ease) both .15s}
+.p1 img{animation:settle 1.6s var(--ease) both .15s}
+.js .rise{opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js .rise.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .p1,.p1 img{animation:none}
+  .js .rise{opacity:1;transform:none;transition:none}
+}
+
+/* ── телефон: своя доска ── */
+@media (max-width:900px){
+  :root{--pad:20px;--gap:6px}
+  .top .nav{display:none}
+  .mark{grid-column:span 3}.act{grid-column:span 9}
+  .hero{height:auto;min-height:0;grid-template-rows:none}
+  .name{grid-column:1/-1;min-height:30svh}
+  .p1{grid-column:1/-1;aspect-ratio:4/3}
+  .p2{display:none}
+  .duo{grid-column:1/-1;grid-template-columns:1fr}
+  .duo .tile{min-height:0}
+  .head{padding:64px var(--pad) var(--pad)}
+  .pick{display:flex}
+  table thead{display:none}
+  td.c{display:none}td.c.sel{display:table-cell;background:var(--accent)!important;color:var(--accent-ink)}
+  td.c.sel i{color:var(--accent-muted)}
+  th,td{padding:16px}
+  .w1,.w2,.w3{grid-column:1/-1;height:auto;aspect-ratio:4/3}
+  .form,.sum{grid-column:1/-1}
+  .days{grid-template-columns:repeat(4,1fr)}
   .slots{grid-template-columns:repeat(4,1fr)}
   .two{grid-template-columns:1fr}
-  header .btn{padding:10px 14px;font-size:14px}
-  .demo-tag{left:10px;right:10px;bottom:10px;max-width:none;text-align:center}
+  .strip img{height:110px}
+  .chead{margin:48px 0 28px;grid-template-columns:1fr}
+  .cells .c3,.cells .map,.cells .mapph{grid-column:1/-1}
+  .cells .mapph{aspect-ratio:4/3}
+  .f1,.f2,.f3,.word,.go{grid-column:1/-1}
+  .word,.go{min-height:160px!important}
 }
 </style>
 </head>
 <body>
-<div class="topline">
-  <div class="wrap">
-    <span><span class="ph">адрес мойки</span><span class="sep hide-m">|</span><span class="hide-m">ежедневно 9:00–21:00</span></span>
-    <span class="hide-m"><b class="ph">+7 (000) 000-00-00</b></span>
+<div class="demo-tag">Демо-версия сайта: адрес, телефон и цены примерные</div>
+<div class="top">
+  <div class="board">
+    <a class="tile mark" href="#top" aria-label="Румянцево Парк, наверх">РП</a>
+    <nav class="tile nav" aria-label="Разделы">
+      <a href="#price">Цены</a><a href="#works">Работы</a><a href="#book">Запись</a><a href="#contacts">Контакты</a>
+      <a class="tel" href="#contacts">+7 (000) 000-00-00</a>
+    </nav>
+    <a class="tile act" href="#book">Записаться онлайн
+      <svg width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M0 8h19M13 1l7 7-7 7"/></svg></a>
   </div>
 </div>
-<header>
-  <div class="wrap">
-    <a class="brand" href="#top"><b>Румянцево Парк</b><span>автомойка · детейлинг</span></a>
-    <nav>
-      <a href="#price">Цены</a>
-      <a href="#works">Работы</a>
-      <a href="#book">Запись</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
-    <a class="hphone ph" href="#contacts">+7 (000) 000-00-00</a>
-    <a class="btn btn-y" href="#book">Записаться</a>
-  </div>
-</header>
 
 <main id="top">
-<section class="hero" style="padding:0">
-  <div class="wrap">
-    <div class="kicker">Автомойка и детейлинг в Румянцево</div>
-    <h1>Помоем, почистим салон, отполируем</h1>
-    <p>Выберите услугу и свободное время на сайте — приезжайте к назначенному часу, без очереди. Накануне напомним о записи в Telegram.</p>
-    <div class="cta">
-      <a class="btn btn-y" href="#book">Записаться онлайн</a>
-      <a class="btn btn-l" href="#price">Цены</a>
-    </div>
-    <div class="open"><i></i><span id="nearest">ближайшее свободное время — завтра</span></div>
+<section class="board hero" aria-label="Румянцево Парк">
+  <div class="tile name"><h1 class="disp"><span>Румянцево</span><span>Парк</span></h1><p class="lead">Автомойка и детейлинг в Румянцево</p></div>
+  <div class="tile ph p1"><img src="img/hero.jpg" alt="Машина в пене на мойке" width="1600" height="1067"></div>
+  <div class="tile ph p2"><img src="img/polish.jpg" alt="Полировка капота машинкой" width="1200" height="800"></div>
+  <div class="duo">
+    <div class="tile say"><p class="lead">Записываетесь на свободный час и приезжаете без очереди. Машину примем сразу.</p><p class="small">Ежедневно 9:00–21:00</p></div>
+    <div class="tile now"><div><p class="lead" id="nowTitle">Свободно сегодня</p>
+      <div class="free" id="free"></div></div></div>
   </div>
 </section>
 
-<section id="price">
-  <div class="wrap">
-    <div class="price-head">
-      <div>
-        <h2>Цены</h2>
-        <p class="lead">Цена зависит от размера машины. Точную стоимость детейлинга мастер скажет после осмотра.</p>
-      </div>
-    </div>
+<section class="board sec" id="price">
+  <div class="head rise"><h2>Цены</h2><p>Цена зависит от размера машины. Точную стоимость детейлинга мастер назовёт после осмотра.</p></div>
+  <div class="tile pt rise">
+    <div class="pick" id="pick" role="group" aria-label="Класс машины"></div>
     <table>
-      <thead><tr><th>Услуга</th><th class="c">Седан</th><th class="c">Кроссовер</th><th class="c">Внедорожник</th><th></th></tr></thead>
+      <thead><tr><th>Услуга</th>
+        <th class="c" data-c="0"><button data-c="0">Седан<small>и хэтчбек</small></button></th>
+        <th class="c" data-c="1"><button data-c="1">Кроссовер<small>и универсал</small></button></th>
+        <th class="c" data-c="2"><button data-c="2">Внедорожник<small>и минивэн</small></button></th></tr></thead>
       <tbody id="ptable"></tbody>
     </table>
-    <div class="pnote">Цены для примера — на вашем сайте будет ваш прайс.</div>
-
-    <div class="works" id="works">
-      <figure><img src="img/tire.jpg" alt="Мойка дисков щёткой"><figcaption>Шины и диски<span>очистка дисков, чернение резины</span></figcaption></figure>
-      <figure><img src="img/interior.jpg" alt="Салон после химчистки"><figcaption>Химчистка салона<span>кожа, ткань, потолок</span></figcaption></figure>
-      <figure><img src="img/polish.jpg" alt="Полировка капота"><figcaption>Полировка<span>блеск без мелких царапин</span></figcaption></figure>
-    </div>
   </div>
 </section>
 
-<section id="book">
-  <div class="wrap">
-    <h2>Запись онлайн</h2>
-    <p class="lead">Свободное время видно сразу. Запись занимает меньше минуты.</p>
-    <div class="book">
-      <div id="form">
-        <div class="step"><label><i>01</i>Услуга</label>
-          <div class="two"><select id="svc"></select><select id="cls"></select></div></div>
-        <div class="step"><label><i>02</i>День</label><div class="days" id="days"></div></div>
-        <div class="step"><label><i>03</i>Время</label><div class="slots" id="slots"></div></div>
-        <div class="step"><label><i>04</i>Контакты</label>
-          <div class="two">
-            <input id="nm" placeholder="Имя" autocomplete="name">
-            <input id="tel" placeholder="+7 (___) ___-__-__" inputmode="tel" autocomplete="tel">
-          </div>
-          <input id="car" placeholder="Марка и номер машины" style="margin-top:10px">
-        </div>
+<section class="board sec" id="works">
+  <div class="head rise"><h2>Работы</h2><p>Моем руками, сушим микрофиброй, салон чистим экстрактором. Цены выше — для примера, на сайте будет ваш прайс.</p></div>
+  <figure class="tile ph w1 rise"><img src="img/tire.jpg" alt="Мойка диска щёткой" loading="lazy" width="1200" height="800"><figcaption class="cap">Шины и диски отмываем щёткой, резину черним, чтобы колёса не выглядели серыми.</figcaption></figure>
+  <figure class="tile ph w2 rise"><img src="img/interior.jpg" alt="Кожаный салон после химчистки" loading="lazy" width="1200" height="800"><figcaption class="cap">Химчистка салона: кожа, ткань, потолок и багажник за один заезд.</figcaption></figure>
+  <figure class="tile ph w3 rise"><img src="img/polish.jpg" alt="Полировка капота" loading="lazy" width="1200" height="800" style="object-position:30% center"><figcaption class="cap">Полировка снимает мелкие царапины и возвращает кузову блеск.</figcaption></figure>
+</section>
+
+<section class="board sec" id="book">
+  <div class="head rise"><h2>Запись</h2><p>Свободное время видно сразу, запись занимает меньше минуты.</p></div>
+  <div class="tile form rise" id="form">
+    <div class="step"><span class="lab">Услуга и машина</span>
+      <div class="two"><select id="svc" aria-label="Услуга"></select><select id="cls" aria-label="Класс машины"></select></div></div>
+    <div class="step"><span class="lab">День</span><div class="days" id="days" role="group" aria-label="День"></div></div>
+    <div class="step"><span class="lab">Время</span><div class="slots" id="slots" role="group" aria-label="Время"></div></div>
+    <div class="step"><span class="lab">Как с вами связаться</span>
+      <div class="two">
+        <label class="fld"><span>Имя</span><input id="nm" autocomplete="name"></label>
+        <label class="fld"><span>Телефон</span><input id="tel" placeholder="+7 (___) ___-__-__" inputmode="tel" autocomplete="tel"></label>
       </div>
-      <div class="sum">
-        <div id="sumBox">
-          <h3>Ваша запись</h3>
-          <div class="row"><span>Услуга</span><b id="sSvc">—</b></div>
-          <div class="row"><span>Машина</span><b id="sCls">—</b></div>
-          <div class="row"><span>Когда</span><b id="sWhen">—</b></div>
-          <div class="row"><span>Займёт</span><b id="sDur">—</b></div>
-          <div class="total"><span>Стоимость</span><b id="sSum">—</b></div>
-          <button class="btn btn-d" style="width:100%" id="go">Записаться</button>
-          <div class="err" id="err"></div>
-        </div>
-        <div class="ok" id="ok">
-          <div class="mark">✓</div>
-          <h3>Вы записаны</h3>
-          <p id="okText"></p>
-          <p>Накануне пришлём напоминание. Если планы поменяются — перенести можно прямо из сообщения.</p>
-          <a class="btn btn-y" style="width:100%;margin-top:6px" href="#" id="tgBtn">Получать напоминания в Telegram</a>
-          <button class="btn" style="width:100%;margin-top:8px;background:transparent;box-shadow:inset 0 0 0 1px var(--rule)" id="again">Новая запись</button>
-        </div>
+      <label class="fld" style="margin-top:var(--gap)"><span>Машина</span><input id="car" placeholder="марка и номер"></label>
+    </div>
+  </div>
+  <div class="tile sum rise">
+    <div id="sumBox" style="display:flex;flex-direction:column;height:100%">
+      <h3>Ваша запись</h3>
+      <div class="row"><span>Услуга</span><b id="sSvc">—</b></div>
+      <div class="row"><span>Машина</span><b id="sCls">—</b></div>
+      <div class="row"><span>Когда</span><b id="sWhen">—</b></div>
+      <div class="row"><span>Займёт</span><b id="sDur">—</b></div>
+      <div class="total"><span>Стоимость</span><b id="sSum">—</b></div>
+      <button class="btn ink" id="go">Записаться</button>
+      <div class="err" id="err" role="alert"></div>
+    </div>
+    <div id="ok">
+      <h3>Вы записаны</h3>
+      <p id="okText"></p>
+      <p>Накануне пришлём напоминание. Если планы поменяются, перенести можно прямо из сообщения.</p>
+      <div style="margin-top:auto">
+        <a class="btn ink" style="width:100%" href="#" id="tgBtn">Напоминания в Telegram</a>
+        <button class="btn" style="width:100%" id="again">Новая запись</button>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contacts">
-  <div class="wrap contact">
-    <div>
-      <h2>Как нас найти</h2>
-      <dl>
-        <dt>Адрес</dt><dd class="ph">адрес мойки</dd>
-        <dt>Телефон</dt><dd class="ph">+7 (000) 000-00-00</dd>
-        <dt>Режим работы</dt><dd>ежедневно, 9:00–21:00</dd>
-        <dt>Telegram</dt><dd class="ph">@ваш_бот</dd>
-      </dl>
-      <a class="btn btn-y" href="#book" style="margin-top:28px">Записаться онлайн</a>
-    </div>
-    <div class="map"><div><b>Карта Яндекса</b>здесь будет ваша точка и маршрут</div></div>
+<section class="contact" id="contacts">
+  <div class="strip" role="region" aria-label="Фото работ, листайте" tabindex="0">
+    <img src="img/hero.jpg" alt="Машина в пене" loading="lazy"><img src="img/tire.jpg" alt="Мойка диска" loading="lazy"><img src="img/interior.jpg" alt="Салон после химчистки" loading="lazy"><img src="img/polish.jpg" alt="Полировка капота" loading="lazy">
+  </div>
+  <div class="chead rise"><h2>Как нас найти</h2><p>Приезжайте к записанному времени, мы предупредим, если что-то поменяется.</p></div>
+  <div class="board cells">
+    <div class="tile c3 rise"><span class="small">Адрес</span><p class="lead">адрес мойки</p></div>
+    <div class="tile c3 rise"><span class="small">Телефон</span><p class="lead">+7 (000) 000-00-00</p></div>
+    <div class="tile c3 rise"><span class="small">Режим работы</span><p class="lead">ежедневно, 9:00–21:00</p></div>
+    <div class="tile map rise"><span class="small">Карта</span><p class="lead">Здесь будет карта Яндекса с вашей точкой и маршрутом</p></div>
+    <div class="tile ph mapph rise"><img src="img/interior.jpg" alt="Салон машины после химчистки" loading="lazy" width="1200" height="800"></div>
   </div>
 </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span><b>РУМЯНЦЕВО ПАРК</b> · автомойка и детейлинг</span>
-    <span>Сайт сделан в <a href="https://wavefinch.ru" style="color:#fff">Wavefinch</a></span>
-  </div>
+<footer class="board foot">
+  <div class="tile f1"><p class="lead">Автомойка и детейлинг в Румянцево</p><p class="small">Сайт сделан в <a href="https://wavefinch.ru" style="color:var(--ink)">Wavefinch</a></p></div>
+  <div class="tile f2"><a href="#price">Цены</a><a href="#works">Работы</a><a href="#book">Запись</a><a href="#contacts">Контакты</a></div>
+  <div class="tile f3"><span class="small">Москва, сейчас</span><p class="lead" id="clock">ежедневно 9:00–21:00</p></div>
+  <div class="tile word"><span class="disp">Румянцево Парк</span></div>
+  <a class="tile go" href="#book"><span class="lead" style="font-weight:500">Записаться на мойку</span>
+    <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="4" aria-hidden="true"><path d="M8 48L48 8M18 8h30v30"/></svg></a>
 </footer>
 
-<div class="demo-tag">Демо-версия · адрес, телефон и цены примерные</div>
 
 <script>
+document.documentElement.classList.add('js');
 // Прайс демо: цены по классам [седан, кроссовер, внедорожник], длительность в минутах.
 const CLS=['Седан / хэтчбек','Кроссовер','Внедорожник / минивэн'];
+const SHORT=['Седан','Кроссовер','Внедорожник'];
 const SVC=[
   {n:'Экспресс-мойка',s:'кузов пеной, сушка, коврики',d:30,p:[800,1000,1200]},
   {n:'Комплексная мойка',s:'кузов в две фазы, пылесос, пластик и стёкла внутри',d:60,p:[1800,2200,2600]},
-  {n:'Мойка + шины и диски',s:'комплексная мойка, очистка дисков, чернение резины',d:75,p:[2400,2800,3300]},
+  {n:'Мойка, шины и диски',s:'комплексная мойка, очистка дисков, чернение резины',d:75,p:[2400,2800,3300]},
   {n:'Химчистка салона',s:'сиденья, потолок, ковролин, багажник, озонирование',d:240,p:[9000,11000,13500],from:1},
-  {n:'Полировка кузова',s:'удаление мелких царапин, восстановление блеска, воск',d:300,p:[12000,15000,18000],from:1},
-  {n:'Керамическое покрытие',s:'подготовка, полировка, керамика — защита до года',d:480,p:[25000,30000,36000],from:1}
+  {n:'Полировка кузова',s:'мелкие царапины, восстановление блеска, воск',d:300,p:[12000,15000,18000],from:1},
+  {n:'Керамическое покрытие',s:'подготовка, полировка, керамика, защита до года',d:480,p:[25000,30000,36000],from:1}
 ];
 let sel={svc:1,cls:0,day:0,slot:null};
 const $=id=>document.getElementById(id);
 const rub=v=>v.toLocaleString('ru-RU')+' ₽';
+const price=(s,c)=>(s.from?'от ':'')+rub(s.p[c]);
 const dur=m=>m<60?m+' мин':(m%60?Math.floor(m/60)+' ч '+(m%60)+' мин':(m/60)+' ч');
 
-const SHORT=['седан','кроссовер','внедорожник'];
+// Таблица цен: нажатие на цену сразу выбирает услугу и класс в записи.
 $('ptable').innerHTML=SVC.map((s,i)=>`<tr><td class="n"><b>${s.n}</b><span>${s.s}</span></td>
-  ${s.p.map((v,j)=>`<td class="p">${s.from?'от ':''}${rub(v)}<small class="mob">${SHORT[j]}</small></td>`).join('')}
-  <td class="go"><a href="#book" data-i="${i}">Записаться</a></td></tr>`).join('');
-// подписи классов в строках нужны только на телефоне (там нет шапки таблицы)
-const mq=matchMedia('(max-width:640px)');
-const mobLabels=()=>document.querySelectorAll('small.mob').forEach(x=>x.style.display=mq.matches?'block':'none');
-mobLabels();mq.addEventListener('change',mobLabels);
-document.querySelectorAll('td.go a').forEach(a=>a.onclick=()=>{sel.svc=+a.dataset.i;$('svc').value=sel.svc;upd();});
+  ${s.p.map((v,j)=>`<td class="c" data-c="${j}"><button data-i="${i}" data-c="${j}" aria-label="${s.n}, ${SHORT[j]}, ${price(s,j)}: записаться">${price(s,j)}<i>≈ ${dur(s.d)}</i></button></td>`).join('')}</tr>`).join('');
+$('pick').innerHTML=SHORT.map((c,j)=>`<button data-c="${j}">${c}</button>`).join('');
+function paintCls(){
+  document.querySelectorAll('[data-c]').forEach(x=>{
+    const on=+x.dataset.c===sel.cls;
+    if(x.tagName==='TD'||x.tagName==='TH'){x.classList.toggle('on-cls',on);x.classList.toggle('sel',on);}
+    if(x.parentElement&&x.parentElement.id==='pick')x.classList.toggle('on',on);
+  });
+}
+document.querySelectorAll('thead button,#pick button').forEach(b=>b.onclick=()=>{sel.cls=+b.dataset.c;$('cls').value=sel.cls;paintCls();upd();});
+document.querySelectorAll('td.c button').forEach(b=>b.onclick=()=>{sel.svc=+b.dataset.i;sel.cls=+b.dataset.c;$('svc').value=sel.svc;$('cls').value=sel.cls;paintCls();upd();location.hash='book';});
 
 $('svc').innerHTML=SVC.map((s,i)=>`<option value="${i}">${s.n}</option>`).join('');
 $('cls').innerHTML=CLS.map((c,i)=>`<option value="${i}">${c}</option>`).join('');
 $('svc').value=sel.svc;
 $('svc').onchange=e=>{sel.svc=+e.target.value;upd();};
-$('cls').onchange=e=>{sel.cls=+e.target.value;upd();};
+$('cls').onchange=e=>{sel.cls=+e.target.value;paintCls();upd();};
 
 const WD=['вс','пн','вт','ср','чт','пт','сб'],MON=['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
 const days=[...Array(7)].map((_,i)=>{const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()+i);return d;});
 const dayName=i=>i===0?'сегодня':i===1?'завтра':WD[days[i].getDay()];
 function drawDays(){
-  $('days').innerHTML=days.map((d,i)=>`<div class="day ${i===sel.day?'on':''}" data-i="${i}">${dayName(i)}<b>${d.getDate()}</b>${MON[d.getMonth()]}</div>`).join('');
+  $('days').innerHTML=days.map((d,i)=>`<button class="day ${i===sel.day?'on':''}" data-i="${i}" aria-pressed="${i===sel.day}">${dayName(i)}<b>${d.getDate()}</b>${MON[d.getMonth()]}</button>`).join('');
   document.querySelectorAll('.day').forEach(x=>x.onclick=()=>{sel.day=+x.dataset.i;sel.slot=null;drawDays();drawSlots();upd();});
 }
 // «Занятость» — детерминированная по дню и часу, чтобы картинка не прыгала.
@@ -317,7 +367,8 @@ function busy(di,h){return ((di*7+h*3)%5===0)||((di+h)%7===0);}
 function past(di,h){return di===0&&h<=new Date().getHours();}
 function drawSlots(){
   const hs=[];
-  for(let h=9;h<=20;h++)hs.push(`<div class="slot ${past(sel.day,h)||busy(sel.day,h)?'busy':''} ${sel.slot===h?'on':''}" data-h="${h}">${h}:00</div>`);
+  for(let h=9;h<=20;h++){const b=past(sel.day,h)||busy(sel.day,h);
+    hs.push(`<button class="slot ${b?'busy':''} ${sel.slot===h?'on':''}" data-h="${h}" ${b?'disabled aria-label="'+h+':00 занято"':''}>${h}:00</button>`);}
   $('slots').innerHTML=hs.join('');
   document.querySelectorAll('.slot:not(.busy)').forEach(x=>x.onclick=()=>{sel.slot=+x.dataset.h;drawSlots();upd();});
 }
@@ -326,9 +377,19 @@ function upd(){
   const s=SVC[sel.svc];
   $('sSvc').textContent=s.n;$('sCls').textContent=CLS[sel.cls];$('sDur').textContent='≈ '+dur(s.d);
   $('sWhen').textContent=sel.slot==null?'выберите время':whenText();
-  $('sSum').textContent=(s.from?'от ':'')+rub(s.p[sel.cls]);$('err').textContent='';
+  $('sSum').textContent=price(s,sel.cls);$('err').textContent='';
 }
 function firstFree(){for(let di=0;di<7;di++)for(let h=9;h<=20;h++)if(!past(di,h)&&!busy(di,h))return [di,h];return [1,9];}
+
+// Живое табло на первом экране: ближайшие свободные часы, нажатие записывает на них.
+function drawFree(){
+  const [fd]=firstFree(),hs=[];
+  for(let h=9;h<=20&&hs.length<6;h++)if(!past(fd,h)&&!busy(fd,h))hs.push(h);
+  $('nowTitle').textContent=fd===0?'Свободно сегодня':'Свободно '+(fd===1?'завтра':dayName(fd)+', '+days[fd].getDate()+' '+MON[days[fd].getMonth()]);
+  $('free').innerHTML=hs.map(h=>`<button data-h="${h}">${h}:00</button>`).join('');
+  document.querySelectorAll('#free button').forEach(b=>b.onclick=()=>{sel.day=fd;sel.slot=+b.dataset.h;drawDays();drawSlots();upd();location.hash='book';});
+}
+
 $('tel').addEventListener('input',e=>{
   let v=e.target.value.replace(/\D/g,'');if(v.startsWith('8'))v='7'+v.slice(1);if(!v.startsWith('7'))v='7'+v;v=v.slice(0,11);
   const p=[v.slice(1,4),v.slice(4,7),v.slice(7,9),v.slice(9,11)];
@@ -340,17 +401,27 @@ $('go').onclick=()=>{
   if(!nm)return $('err').textContent='Как к вам обращаться?';
   if(tel.length<11)return $('err').textContent='Проверьте номер телефона';
   const s=SVC[sel.svc];
-  $('sumBox').style.display='none';$('ok').style.display='block';
-  $('okText').textContent=`${nm}, ждём вас ${whenText()}. ${s.n}, ${(s.from?'от ':'')+rub(s.p[sel.cls])}.`;
+  $('sumBox').style.display='none';$('ok').style.display='flex';
+  $('okText').textContent=`${nm}, ждём вас ${whenText()}. ${s.n}, ${price(s,sel.cls)}.`;
 };
 // В демо бота ещё нет — на настоящем сайте кнопка ведёт в бота записи.
-$('tgBtn').onclick=e=>{e.preventDefault();e.target.textContent='Здесь откроется ваш бот в Telegram';};
-$('again').onclick=()=>{$('ok').style.display='none';$('sumBox').style.display='block';sel.slot=null;drawSlots();upd();};
+$('tgBtn').onclick=e=>{e.preventDefault();e.target.textContent='Здесь откроется ваш бот';};
+$('again').onclick=()=>{$('ok').style.display='none';$('sumBox').style.display='flex';sel.slot=null;drawSlots();upd();};
 
-// Сразу открываем ближайший день, где ещё есть свободное время: вечером «сегодня» уже всё прошло.
+// Часы в подвале: открыто ли сейчас (по Москве).
+function tick(){
+  const m=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Moscow'}));
+  const hh=m.getHours(),t=String(hh).padStart(2,'0')+':'+String(m.getMinutes()).padStart(2,'0');
+  $('clock').textContent=t+(hh>=9&&hh<21?', открыто до 21:00':', откроемся в 9:00');
+}
+tick();setInterval(tick,30000);
+
+// Появление частей секций по очереди, один раз.
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.sec,.contact,.board.cells').forEach(sec=>sec.querySelectorAll(':scope > .rise').forEach((el,i)=>{el.style.transitionDelay=(i*80)+'ms';io.observe(el);}));
+
 const [fd,fh]=firstFree();sel.day=fd;
-$('nearest').textContent=`ближайшее свободное время — ${dayName(fd)} в ${fh}:00`;
-drawDays();drawSlots();upd();
+drawDays();drawSlots();drawFree();paintCls();upd();
 </script>
 </body>
 </html>
